@@ -6,7 +6,9 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { store } from '@redux/configure-store';
 import { MainPage } from './pages';
 
+import 'antd/dist/antd.css';
 import 'normalize.css';
+import { MainLayout } from './components';
 import './index.css';
 
 const domNode = document.getElementById('root') as HTMLDivElement;
@@ -17,7 +19,9 @@ root.render(
         <Provider store={store}>
             <HashRouter>
                 <Routes>
-                    <Route path='/' element={<MainPage />} />
+                    <Route element={<MainLayout />}>
+                        <Route path='/' element={<MainPage />} />
+                    </Route>
                 </Routes>
             </HashRouter>
         </Provider>
