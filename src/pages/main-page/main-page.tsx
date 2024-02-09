@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import './main-page.css';
+import './main-page.scss';
 
 export const MainPage: FC = () => {
     return <>asdsad</>;

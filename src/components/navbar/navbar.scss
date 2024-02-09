@@ -1,0 +1,122 @@
+@import 'src/theme/variables';
+
+.ant-layout-sider-children {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__logo {
+    margin-top: 30px;
+    padding: 14px 46px 17px 29px;
+
+    &--small {
+        padding: 19px 17px 18px 18px;
+    }
+
+    &--link {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: flex-end;
+        justify-content: center;
+    }
+}
+
+.nav__menu {
+    margin-top: 50px;
+    flex: 1 0 auto;
+
+    &--icon svg {
+        fill: $primary-color;
+    }
+
+    &--item {
+        margin-bottom: 16px !important;
+    }
+}
+
+.nav__logout {
+    border-top: 1px solid $divider-color;
+    flex: 0 0 auto;
+
+    &--icon svg {
+        fill: $gray-color;
+    }
+
+    &--name {
+        display: flex;
+        width: 74px;
+        justify-content: center;
+    }
+
+    &--item {
+        height: 40px !important;
+    }
+}
+
+.trigger {
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+    width: 14px;
+    height: 14px;
+}
+
+.nav__burger {
+    position: absolute;
+    top: 50%;
+    right: -19px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 66px;
+    background: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+}
+
+.trigger:hover {
+    color: $custom-color;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-item {
+    margin: 0;
+    padding: 0 16px !important;
+    height: 42px;
+}
+
+@media (max-width: 550px) {
+    .nav {
+        position: absolute;
+        height: 100%;
+
+        &__logo {
+            margin-top: 0;
+            padding: 16px 17px;
+
+            &--img {
+                width: 72px;
+                height: 18px;
+            }
+        }
+
+        &__menu {
+            margin-top: 16px;
+
+            &--item {
+                margin-bottom: 8px !important;
+            }
+        }
+
+        &__burger {
+            top: 48px;
+            right: -30px;
+            width: 32px;
+            height: 48px;
+        }
+    }
+
+    .ant-menu-inline.ant-menu-root .ant-menu-item {
+        padding: 0 8px !important;
+    }
+}

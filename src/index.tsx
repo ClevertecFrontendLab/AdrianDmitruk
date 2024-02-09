@@ -9,7 +9,7 @@ import { MainPage } from './pages';
 import 'antd/dist/antd.css';
 import 'normalize.css';
 import { MainLayout } from './components';
-import './index.css';
+import './index.scss';
 
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);

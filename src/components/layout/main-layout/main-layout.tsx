@@ -3,7 +3,8 @@ import { FC } from 'react';
 import { Navbar } from '@components/navbar';
 import { Layout } from 'antd';
 
-import './main-layout.css';
+import { Outlet } from 'react-router-dom';
+import './main-layout.scss';
 
 const { Header, Content } = Layout;
 
@@ -20,10 +21,10 @@ export const MainLayout: FC = () => {
                     style={{
                         margin: '24px 16px',
                         padding: 24,
-                        minHeight: 280,
+                        minHeight: 180,
                     }}
                 >
-                    Content
+                    <Outlet />
                 </Content>
                 <Content
                     className='site-layout-background'

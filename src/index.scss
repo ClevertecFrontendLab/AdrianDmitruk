@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+@import 'src/theme/variables';
+
 * {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    color: var(--character-light-title-85);
-}
-
-:root {
-    --character-light-title-85: #262626;
-    --primary-light-9: #061178;
-    --character-light-dividers: #f0f0f0;
-    --neutral-gray-12: #141414;
+    color: $text-color;
 }
 
 #root {
