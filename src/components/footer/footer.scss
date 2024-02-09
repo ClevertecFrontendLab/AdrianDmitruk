@@ -1,0 +1,33 @@
+@import 'src/theme/variables';
+
+.footer {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 42px;
+    margin-top: 24px;
+    padding: 0 24px;
+
+    &__btn {
+        color: $primary-light-6;
+    }
+
+    &__btn--card {
+        padding: 4px 13px;
+    }
+}
+
+@media (max-width: 686px) {
+    .footer {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 24px;
+        padding: 0 16px;
+        margin-top: 0;
+    }
+
+    .footer__btn {
+        margin-bottom: 42px;
+    }
+}

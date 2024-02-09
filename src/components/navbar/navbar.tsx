@@ -1,8 +1,6 @@
 import {
-    CalendarOutlined,
     HeartFilled,
     IdcardOutlined,
-    ImportOutlined,
     MenuFoldOutlined,
     MenuUnfoldOutlined,
     TrophyFilled,
@@ -17,6 +15,8 @@ import fitLogo from '../../assets/fit-logo.png';
 
 import { useWindowWidth } from '@hooks/use-window-width';
 import cn from 'classnames';
+import { Calendar } from '../../assets/icon/calendar';
+import { Exit } from '../../assets/icon/exit';
 
 const { Sider } = Layout;
 
@@ -57,7 +57,11 @@ export const Navbar: FC = () => {
                 items={[
                     {
                         key: '1',
-                        icon: !isMobile && <CalendarOutlined className='nav__menu--icon' />,
+                        icon: !isMobile && (
+                            <span className='nav__menu--icon-wrap'>
+                                <Calendar />
+                            </span>
+                        ),
                         label: 'Календарь',
                         className: 'nav__menu--item',
                     },
@@ -89,7 +93,11 @@ export const Navbar: FC = () => {
                 items={[
                     {
                         key: '1',
-                        icon: !isMobile && <ImportOutlined className='nav__logout--icon' />,
+                        icon: !isMobile && (
+                            <span className='nav__menu--icon-wrap'>
+                                <Exit />
+                            </span>
+                        ),
                         label: <span className='nav__logout--name'>Выход</span>,
                         className: 'nav__logout--item',
                     },

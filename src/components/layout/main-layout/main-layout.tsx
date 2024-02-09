@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { Navbar } from '@components/navbar';
 import { Layout } from 'antd';
 
+import { Footer } from '@components/footer';
 import { Header } from '@components/header';
 import { Outlet } from 'react-router-dom';
 import './main-layout.scss';
@@ -15,25 +16,10 @@ export const MainLayout: FC = () => {
             <Navbar />
             <Layout className='site-layout'>
                 <Header />
-                <Content
-                    className='site-layout-background'
-                    style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                        minHeight: 180,
-                    }}
-                >
+                <Content className='site-layout-background'>
                     <Outlet />
                 </Content>
-                <Content
-                    className='site-layout-background'
-                    style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                    }}
-                >
-                    Content
-                </Content>
+                <Footer />
             </Layout>
         </Layout>
     );

@@ -25,6 +25,10 @@
     margin-top: 50px;
     flex: 1 0 auto;
 
+    &--icon-wrap {
+        display: flex;
+    }
+
     &--icon svg {
         fill: $primary-color;
     }
@@ -89,6 +93,7 @@
     .nav {
         position: absolute;
         height: 100%;
+        z-index: 2;
 
         &__logo {
             margin-top: 0;
