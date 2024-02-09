@@ -104,7 +104,10 @@ export const Navbar: FC = () => {
                 ]}
             />
 
-            <div className='nav__burger'>
+            <div
+                className='nav__burger'
+                data-test-id={isMobile ? 'sider-switch-mobile' : 'sider-switch'}
+            >
                 {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                     className: 'trigger',
                     onClick: () => setCollapsed(!collapsed),
