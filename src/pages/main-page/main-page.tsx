@@ -1,34 +1,58 @@
-import React, { useState } from 'react';
+import { FC } from 'react';
 
-import reactLogo from '/react.svg';
-import viteLogo from '/vite.svg';
-import tsLogo from '/ts.svg';
-import './main-page.css';
+import { CalendarOutlined, HeartFilled, IdcardOutlined } from '@ant-design/icons';
+import { CardBox, CardInfo } from '@components/card';
+import { Button } from 'antd';
+import './main-page.scss';
 
-export const MainPage: React.FC = () => {
-    const [count, setCount] = useState(0);
-
+export const MainPage: FC = () => {
     return (
-        <>
-            <div>
-                <a href='https://vitejs.dev' target='_blank'>
-                    <img src={viteLogo} className='logo' alt='Vite logo' />
-                </a>
-                <a href='https://react.dev' target='_blank'>
-                    <img src={reactLogo} className='logo react' alt='React logo' />
-                </a>
-                <a href='https://www.typescriptlang.org/' target='_blank'>
-                    <img src={tsLogo} className='logo' alt='TS logo' />
-                </a>
+        <div className='main'>
+            <CardInfo>
+                <ul className='main__list-info'>
+                    <li>С CleverFit ты сможешь: </li>
+                    <li>
+                        — планировать свои тренировки на календаре, выбирая тип и уровень нагрузки;
+                    </li>
+                    <li>
+                        — отслеживать свои достижения в разделе статистики, сравнивая свои
+                        результаты с нормами и рекордами;
+                    </li>
+                    <li>
+                        — создавать свой профиль, где ты можешь загружать свои фото, видео и отзывы
+                        о тренировках;
+                    </li>
+                    <li>
+                        — выполнять расписанные тренировки для разных частей тела, следуя подробным
+                        инструкциям и советам профессиональных тренеров.
+                    </li>
+                </ul>
+            </CardInfo>
+            <div className='main__card'>
+                <CardInfo>
+                    <h3 className='main__title-info'>
+                        CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса.
+                        Не откладывай на завтра — начни тренироваться уже сегодня!
+                    </h3>
+                </CardInfo>
+                <div className='main__card--list'>
+                    <CardBox title='Расписать тренировки'>
+                        <Button className='main__card--btn' type='text' icon={<HeartFilled />}>
+                            Тренировки
+                        </Button>
+                    </CardBox>
+                    <CardBox title='Назначить календарь'>
+                        <Button className='main__card--btn' type='text' icon={<CalendarOutlined />}>
+                            Календарь
+                        </Button>
+                    </CardBox>
+                    <CardBox title='Заполнить профиль'>
+                        <Button className='main__card--btn' type='text' icon={<IdcardOutlined />}>
+                            Профиль
+                        </Button>
+                    </CardBox>
+                </div>
             </div>
-            <h1>Vite + React + TS</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/pages/main-page.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-        </>
+        </div>
     );
 };

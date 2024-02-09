@@ -1,0 +1,43 @@
+@import 'src/theme/variables';
+
+.card {
+    background: $white-color;
+    max-width: 240px;
+    width: 100%;
+    border-radius: 2px;
+
+    &__header {
+        padding: 12px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-align: center;
+
+        &--title {
+            font-size: 16px;
+            color: $text-color;
+        }
+
+        &--subtitle {
+            font-size: 14px;
+            color: $text-light-secondary;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 12px 0;
+        border-top: 1px solid $divider-color;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 488px) {
+    .card {
+        background: $white-color;
+        max-width: 100%;
+    }
+}

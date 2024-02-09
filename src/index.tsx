@@ -6,8 +6,10 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import { store } from '@redux/configure-store';
 import { MainPage } from './pages';
 
+import 'antd/dist/antd.css';
 import 'normalize.css';
-import './index.css';
+import { MainLayout } from './components';
+import './index.scss';
 
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
@@ -17,7 +19,9 @@ root.render(
         <Provider store={store}>
             <HashRouter>
                 <Routes>
-                    <Route path='/' element={<MainPage />} />
+                    <Route element={<MainLayout />}>
+                        <Route path='/' element={<MainPage />} />
+                    </Route>
                 </Routes>
             </HashRouter>
         </Provider>

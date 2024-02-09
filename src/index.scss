@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import 'src/theme/variables';
+
+* {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+#root {
+    height: 100%;
+}
+
+body {
+    color: $text-color;
+    line-height: 130%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: -webkit-fill-available;
+}
+
+@media (max-width: 1016px) {
+    .container {
+        height: inherit;
+    }
+}
+
+@media (max-width: 918px) {
+    .container {
+        height: auto;
+    }
+}
