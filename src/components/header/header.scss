@@ -1,0 +1,44 @@
+@import 'src/theme/variables';
+
+.header {
+    background: $primary-light-1 !important;
+    padding: 16px 24px;
+    height: auto;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__link {
+        color: $text-color;
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: flex-start;
+        padding: 6px 0;
+
+        &--title {
+            margin: 0 !important;
+            font-weight: 700 !important;
+            line-height: 130% !important;
+        }
+    }
+}
+
+@media (max-width: 1016px) {
+    .header__wrap--title {
+        font-weight: 500 !important;
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 658px) {
+    .header {
+        gap: 24px;
+
+        &__wrap--title {
+            font-size: 20px !important;
+        }
+    }
+}
