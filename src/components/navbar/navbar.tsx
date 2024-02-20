@@ -13,6 +13,7 @@ import './navbar.scss';
 import cleverLogo from '../../assets/clever-logo.png';
 import fitLogo from '../../assets/fit-logo.png';
 
+import { useAuth } from '@hooks/use-auth';
 import { useWindowWidth } from '@hooks/use-window-width';
 import cn from 'classnames';
 import { Calendar } from '../../assets/icon/calendar';
@@ -21,6 +22,8 @@ import { Exit } from '../../assets/icon/exit';
 const { Sider } = Layout;
 
 export const Navbar: FC = () => {
+    const { handleLogout } = useAuth();
+
     const [collapsed, setCollapsed] = useState<boolean>(false);
 
     const isMobile = useWindowWidth(550);
@@ -100,6 +103,7 @@ export const Navbar: FC = () => {
                         ),
                         label: <span className='nav__logout--name'>Выход</span>,
                         className: 'nav__logout--item',
+                        onClick: handleLogout,
                     },
                 ]}
             />

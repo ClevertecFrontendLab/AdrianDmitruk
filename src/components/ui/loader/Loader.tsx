@@ -4,9 +4,13 @@ import Lottie from 'react-lottie';
 
 import animation from '../../../assets/animation.json';
 
-import './Loader.scss';
+import { useAuth } from '@hooks/use-auth';
+import { Status } from '@redux/auth/types';
+import './loader.scss';
 
 export const Loader: FC = () => {
+    const { statusAuth } = useAuth();
+
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -15,12 +19,17 @@ export const Loader: FC = () => {
             preserveAspectRatio: 'xMidYMid slice',
         },
     };
+
     return (
         <>
-            <div className='loader-bg'></div>
-            <div className='loader'>
-                <Lottie options={defaultOptions} />
-            </div>
+            {statusAuth === Status.LOADING && (
+                <>
+                    <div className='loader-bg'></div>
+                    <div data-test-id='loader' className='loader'>
+                        <Lottie options={defaultOptions} />
+                    </div>
+                </>
+            )}
         </>
     );
 };

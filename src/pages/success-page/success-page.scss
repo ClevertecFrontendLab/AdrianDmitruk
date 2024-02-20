@@ -1,0 +1,27 @@
+@import 'src/theme/variables';
+
+.success-page {
+    padding: 64px 32px;
+}
+
+.ant-result {
+    padding: 0;
+    max-width: 368px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ant-result-title {
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.ant-result-subtitle {
+    line-height: 130%;
+}
+
+.success-button {
+    background: $primary-light-6;
+    height: 40px;
+    width: 100%;
+}
