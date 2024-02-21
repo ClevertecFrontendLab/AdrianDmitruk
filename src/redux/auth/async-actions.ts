@@ -22,7 +22,6 @@ export const getLoginFeatch = createAsyncThunk(
                 name: 'loginResponse',
             };
 
-            // dispatch(setErrorAuth(errorResponse));
             return rejectWithValue(errorResponse);
         }
     },
@@ -43,7 +42,6 @@ export const getRegistrationFeatch = createAsyncThunk(
                 message: error?.response?.data?.message,
                 name: 'registerResponse',
             };
-            // dispatch(setErrorAuth(errorResponse));
 
             return rejectWithValue(errorResponse);
         }
@@ -65,7 +63,6 @@ export const checkEmailFeatch = createAsyncThunk(
                 message: error?.response?.data?.message,
                 name: 'checkEmailResponse',
             };
-            // dispatch(setErrorAuth(errorResponse));
 
             return rejectWithValue(errorResponse);
         }
@@ -88,7 +85,6 @@ export const confirmEmailFeatch = createAsyncThunk(
                 message: error?.response?.data?.message,
                 name: 'confirmEmailResponse',
             };
-            // dispatch(setErrorAuth(errorResponse));
 
             return rejectWithValue(errorResponse);
         }
@@ -113,7 +109,6 @@ export const changePasswordFeatch = createAsyncThunk(
                 message: error?.response?.data?.message,
                 name: 'changePasswordResponse',
             };
-            // dispatch(setErrorAuth(errorResponse));
 
             return rejectWithValue(errorResponse);
         }

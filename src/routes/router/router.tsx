@@ -7,14 +7,11 @@ import {
     SuccessPage,
 } from '@pages/auth-page';
 
-import { Loader } from '@components/ui';
-import React, { Suspense } from 'react';
+import MainPage from '@pages/main-page/main-page';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { DASHBOARD_PAGES } from '../../config';
 import { PrivateRoute } from '../private-route';
 import { PublicRoute } from '../public-route';
-
-const MainPage = React.lazy(() => import('@pages/main-page/main-page'));
 
 export const routes = (
     <Routes>
@@ -41,14 +38,7 @@ export const routes = (
         </Route>
         <Route element={<PrivateRoute />}>
             <Route element={<MainLayout />}>
-                <Route
-                    path={DASHBOARD_PAGES.HOME}
-                    element={
-                        <Suspense fallback={<Loader active />}>
-                            <MainPage />
-                        </Suspense>
-                    }
-                />
+                <Route path={DASHBOARD_PAGES.HOME} element={<MainPage />} />
             </Route>
         </Route>
     </Routes>

@@ -8,11 +8,7 @@ import { useAuth } from '@hooks/use-auth';
 import { Status } from '@redux/auth/types';
 import './loader.scss';
 
-interface ILoaderProps {
-    active?: boolean;
-}
-
-export const Loader: FC<ILoaderProps> = ({ active }) => {
+export const Loader: FC = () => {
     const { statusAuth } = useAuth();
 
     const defaultOptions = {
@@ -26,10 +22,10 @@ export const Loader: FC<ILoaderProps> = ({ active }) => {
 
     return (
         <>
-            {(statusAuth === Status.LOADING || active) && (
+            {statusAuth === Status.LOADING && (
                 <>
-                    <div className='loader-bg'></div>
-                    <div data-test-id='loader' className='loader'>
+                    <div data-test-id='loader' className='loader-bg'></div>
+                    <div className='loader'>
                         <Lottie options={defaultOptions} />
                     </div>
                 </>
