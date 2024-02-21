@@ -10,9 +10,9 @@ import {
 import { Loader } from '@components/ui';
 import React, { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { DASHBOARD_PAGES } from '../config';
-import { PrivateRoute } from './private-route';
-import { PublicRoute } from './public-route';
+import { DASHBOARD_PAGES } from '../../config';
+import { PrivateRoute } from '../private-route';
+import { PublicRoute } from '../public-route';
 
 const MainPage = React.lazy(() => import('@pages/main-page/main-page'));
 

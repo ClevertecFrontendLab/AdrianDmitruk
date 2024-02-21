@@ -15,8 +15,7 @@ import './confirm-email-page.scss';
 const { Text } = Typography;
 
 export const ConfirmEmailPage: FC = () => {
-    const { email, getConfirmEmail, errorAuth, responseCode, clearResponseCode, responseName } =
-        useAuth();
+    const { email, getConfirmEmail, errorAuth, responseCode, responseName } = useAuth();
 
     const [isError, setIsError] = useState<boolean>(false);
 

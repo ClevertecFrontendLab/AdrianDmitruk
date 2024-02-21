@@ -10,7 +10,7 @@ import 'antd/dist/antd.css';
 import 'normalize.css';
 import { Loader } from './components';
 import './index.scss';
-import { routes } from './routes/router';
+import { routes } from './routes/router/router';
 
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
