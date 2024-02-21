@@ -8,6 +8,7 @@ import { history, store } from '@redux/configure-store';
 
 import 'antd/dist/antd.css';
 import 'normalize.css';
+
 import { Loader } from './components';
 import './index.scss';
 import { routes } from './routes/router/router';
