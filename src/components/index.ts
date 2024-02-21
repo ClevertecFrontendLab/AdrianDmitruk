@@ -4,4 +4,4 @@ export { Footer } from './footer';
 export { Header } from './header';
 export { AuthLayout, MainLayout } from './layout';
 export { Navbar } from './navbar';
-export { AuthWrap } from './ui';
+export { AuthWrap, Loader } from './ui';
