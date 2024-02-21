@@ -4,14 +4,13 @@ import logo from '../../assets/auth-logo.png';
 
 import { Auth } from '@components/auth';
 import { AuthWrap } from '@components/ui';
-import { RootState } from '@reduxjs/toolkit/query';
-import { useSelector } from 'react-redux';
+import { store } from '@redux/configure-store';
 import { Link, useNavigate } from 'react-router-dom';
 import { DASHBOARD_PAGES } from '../../config/pages-url';
 import './auth-page.scss';
 
 export const AuthPage: FC = () => {
-    const { location } = useSelector((state: RootState) => state.router);
+    const location = store.getState().router.location?.pathname;
     const navigate = useNavigate();
     const handleTabChange = (key: string) => {
         switch (key) {
@@ -30,7 +29,7 @@ export const AuthPage: FC = () => {
         <AuthWrap cn='auth-page'>
             <img className='auth-page__logo' src={logo} alt='logo' />
             <Tabs
-                defaultActiveKey={location.pathname === '/auth' ? '1' : '2'}
+                defaultActiveKey={location === DASHBOARD_PAGES.LOGIN ? '1' : '2'}
                 className='auth-page__content'
                 onChange={handleTabChange}
                 items={[

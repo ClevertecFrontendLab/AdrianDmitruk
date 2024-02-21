@@ -6,7 +6,7 @@ import { store } from '@redux/configure-store';
 import { Button, Result } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { push } from 'redux-first-history';
-import { DASHBOARD_PAGES } from '../../config';
+import { DASHBOARD_PAGES } from '../../../../config';
 import './success-page.scss';
 
 export const SuccessPage: FC = () => {

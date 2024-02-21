@@ -1,10 +1,18 @@
 import { useAuth } from '@hooks/use-auth';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
-export const PrivateRoute: FC = () => {
-    const { dataAuth } = useAuth();
-    const isAuth = !!dataAuth?.accessToken;
+interface IPrivateRouteProps {
+    children?: ReactNode;
+}
 
-    return isAuth ? <Outlet /> : <Navigate to='/auth' />;
+export const PrivateRoute: FC<IPrivateRouteProps> = ({ children }) => {
+    const { dataAuth } = useAuth();
+    const isAuth = dataAuth?.accessToken;
+
+    if (!isAuth) {
+        return <Navigate to='/auth' replace />;
+    }
+
+    return children ? children : <Outlet />;
 };

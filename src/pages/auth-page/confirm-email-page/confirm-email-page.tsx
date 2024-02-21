@@ -9,7 +9,7 @@ import { store } from '@redux/configure-store';
 import { useNavigate } from 'react-router-dom';
 import VerificationInput from 'react-verification-input';
 import { push } from 'redux-first-history';
-import { DASHBOARD_PAGES } from '../../config';
+import { DASHBOARD_PAGES } from '../../../config';
 import './confirm-email-page.scss';
 
 const { Text } = Typography;

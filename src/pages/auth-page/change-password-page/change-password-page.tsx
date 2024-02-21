@@ -8,7 +8,7 @@ import { useAuth } from '@hooks/use-auth';
 import { store } from '@redux/configure-store';
 import { useNavigate } from 'react-router-dom';
 import { push } from 'redux-first-history';
-import { DASHBOARD_PAGES } from '../../config';
+import { DASHBOARD_PAGES } from '../../../config';
 import './change-password-page.scss';
 
 interface ChangePasswordValues {
@@ -21,15 +21,8 @@ export const ChangePasswordPage: FC = () => {
 
     const navigate = useNavigate();
 
-    const {
-        getChangePassword,
-        getRegister,
-        errorAuth,
-        repeatRegister,
-        responseCode,
-        email,
-        responseName,
-    } = useAuth();
+    const { getChangePassword, errorAuth, repeatRegister, responseCode, email, responseName } =
+        useAuth();
 
     const onFinish = (values: ChangePasswordValues) => {
         repeatRegister({ email, password: values.password });
@@ -98,16 +91,14 @@ export const ChangePasswordPage: FC = () => {
                     rules={[
                         {
                             required: true,
-                            message: 'Please confirm your password!',
+                            message: 'Обязательное поле!',
                         },
                         ({ getFieldValue }) => ({
                             validator(_, value) {
                                 if (!value || getFieldValue('password') === value) {
                                     return Promise.resolve();
                                 }
-                                return Promise.reject(
-                                    new Error('The two passwords that you entered do not match!'),
-                                );
+                                return Promise.reject(new Error('Пароли не совпадают!'));
                             },
                         }),
                     ]}

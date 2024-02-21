@@ -14,7 +14,7 @@ import './auth.scss';
 interface FormValues {
     email: string;
     password: string;
-    remember: boolean;
+    remember?: boolean;
 }
 
 interface IAuthProps {
@@ -36,13 +36,10 @@ export const Auth: FC<IAuthProps> = ({ type }) => {
         responseCode,
         responseName,
         getCheckEmail,
-
         statusAuth,
     } = useAuth();
 
     const [emailValidationStatus, setEmailValidationStatus] = useState<boolean>(false);
-
-    console.log(emailValidationStatus);
 
     const onFinish = (values: FormValues) => {
         repeatRegister(values);
@@ -150,10 +147,10 @@ export const Auth: FC<IAuthProps> = ({ type }) => {
             <Form.Item
                 name='email'
                 rules={[
-                    { required: true, message: 'Please input your email!' },
+                    { required: true, message: 'Обязательное поле' },
                     {
                         type: 'email',
-                        message: 'Please enter a valid email address!',
+                        // message: 'Please enter a valid email address!',
                         validator: (_, value) => {
                             const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
                             const isValidEmail = emailPattern.test(value);
@@ -163,9 +160,7 @@ export const Auth: FC<IAuthProps> = ({ type }) => {
                             if (isValidEmail) {
                                 return Promise.resolve();
                             } else {
-                                return Promise.reject(
-                                    new Error('Please enter a valid email address!'),
-                                );
+                                return Promise.reject(new Error('Введите валидный Email!'));
                             }
                         },
                     },
@@ -237,16 +232,14 @@ export const Auth: FC<IAuthProps> = ({ type }) => {
                     rules={[
                         {
                             required: true,
-                            message: 'Please confirm your password!',
+                            message: 'Обязательное поле!',
                         },
                         ({ getFieldValue }) => ({
                             validator(_, value) {
                                 if (!value || getFieldValue('password') === value) {
                                     return Promise.resolve();
                                 }
-                                return Promise.reject(
-                                    new Error('The two passwords that you entered do not match!'),
-                                );
+                                return Promise.reject(new Error('Пароли не совпадают!'));
                             },
                         }),
                     ]}
@@ -283,12 +276,6 @@ export const Auth: FC<IAuthProps> = ({ type }) => {
                         data-test-id={
                             type === 'login' ? 'login-submit-button' : 'registration-submit-button'
                         }
-                        // disabled={
-                        //     !form.isFieldsTouched(['email', 'password', 'confirm']) ||
-                        //     !!form
-                        //         .getFieldsError(['email', 'password', 'confirm'])
-                        //         .filter(({ errors }) => errors.length).length
-                        // }
                     >
                         Войти
                     </Button>
