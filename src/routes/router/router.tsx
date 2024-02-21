@@ -7,7 +7,7 @@ import {
     SuccessPage,
 } from '@pages/auth-page';
 
-import { Loader } from '@components/index';
+import { Loader } from '@components/ui/loader/loader';
 import React, { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { DASHBOARD_PAGES } from '../../config';
