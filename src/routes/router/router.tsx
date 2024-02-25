@@ -44,7 +44,7 @@ export const routes = (
                 <Route
                     path={DASHBOARD_PAGES.HOME}
                     element={
-                        <Suspense fallback={<Loader />}>
+                        <Suspense fallback={<Loader active />}>
                             <MainPage />
                         </Suspense>
                     }
