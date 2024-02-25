@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import Lottie from 'react-lottie';
 
-import animation from '../../../assets/animation.json';
+import animation from '../../assets/animation.json';
 
 import { useAuth } from '@hooks/use-auth';
 import { Status } from '@redux/auth/types';

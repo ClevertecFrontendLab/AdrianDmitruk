@@ -3,5 +3,6 @@ export { CardBox, CardInfo } from './card';
 export { Footer } from './footer';
 export { Header } from './header';
 export { AuthLayout, MainLayout } from './layout';
+export { Loader } from './loader';
 export { Navbar } from './navbar';
-export { AuthWrap, Loader } from './ui';
+export { AuthWrap } from './ui';
