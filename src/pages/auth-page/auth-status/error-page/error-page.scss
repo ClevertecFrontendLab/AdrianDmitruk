@@ -1,0 +1,33 @@
+@import 'src/theme/variables';
+
+.error-page {
+    padding: 64px 32px;
+}
+
+.ant-result {
+    padding: 0;
+    max-width: 368px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ant-result-title {
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.error-subtitle {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.error-button {
+    background: $primary-light-6;
+    height: 40px;
+    width: 100%;
+}
+
+.error-button__check-email {
+    max-width: 167px;
+    width: 100%;
+}

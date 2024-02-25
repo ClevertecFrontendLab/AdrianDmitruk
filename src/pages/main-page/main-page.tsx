@@ -5,7 +5,7 @@ import { CardBox, CardInfo } from '@components/card';
 import { Button } from 'antd';
 import './main-page.scss';
 
-export const MainPage: FC = () => {
+const MainPage: FC = () => {
     return (
         <div className='main'>
             <CardInfo>
@@ -56,3 +56,5 @@ export const MainPage: FC = () => {
         </div>
     );
 };
+
+export default MainPage;

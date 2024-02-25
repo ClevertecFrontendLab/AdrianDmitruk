@@ -1,0 +1,32 @@
+.container-auth {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.auth-layout {
+    background-image: url(../../../assets/auth-bg.jpg);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+    &__wrap {
+        backdrop-filter: blur(5px);
+        background-color: rgba(121, 156, 212, 0.5);
+        height: 100%;
+        padding: 0 16px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        max-width: 539px;
+        width: 100%;
+    }
+}

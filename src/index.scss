@@ -40,6 +40,10 @@ ul {
     margin: 0 auto;
     min-height: -webkit-fill-available;
 }
+.ant-layout.ant-layout-has-sider > .ant-layout,
+.ant-layout.ant-layout-has-sider > .ant-layout-content {
+    width: 100%;
+}
 
 @media (max-width: 1016px) {
     .container {

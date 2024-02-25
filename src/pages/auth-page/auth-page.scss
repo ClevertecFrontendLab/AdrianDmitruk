@@ -1,0 +1,63 @@
+@import 'src/theme/variables';
+
+.auth-page {
+    padding: 64px 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+
+    &__content {
+        max-width: 368px;
+        width: 100%;
+    }
+}
+
+.ant-tabs-nav-wrap {
+    justify-content: center;
+}
+
+.ant-tabs-nav-list {
+    width: 100%;
+    justify-content: center;
+}
+
+.ant-tabs-tab {
+    width: 50%;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.ant-tabs-tab + .ant-tabs-tab {
+    margin: 0;
+}
+
+.ant-tabs-ink-bar {
+    background: $primary-light-6;
+}
+
+.ant-tabs-tab-btn:active {
+    color: $primary-light-6;
+}
+
+.ant-tabs-top > .ant-tabs-nav {
+    margin: 0 0 24px;
+}
+
+@media (max-width: 471px) {
+    .auth-page {
+        padding: 32px 16px;
+        gap: 32px;
+
+        &__logo {
+            width: 203px;
+            height: 50px;
+        }
+
+        &__content {
+            max-width: 100%;
+        }
+    }
+}
