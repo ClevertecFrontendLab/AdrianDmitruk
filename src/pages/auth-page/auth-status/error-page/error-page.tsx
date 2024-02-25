@@ -154,21 +154,27 @@ export const ErrorPage: FC = () => {
                     <Result
                         status='error'
                         title='Такой e-mail не зарегистрирован'
-                        subTitle='Мы не нашли в базе вашего e-mail. Попробуйте войти с другим e-mail.'
+                        subTitle={
+                            <p className='error-subtitle'>
+                                Мы не нашли в базе вашего e-mail. Попробуйте войти с другим e-mail.
+                            </p>
+                        }
                         style={{ maxWidth: '100%' }}
                         extra={
-                            <Button
-                                data-test-id='check-retry-button'
-                                className='error-button'
-                                type='primary'
-                                key='console'
-                                onClick={() => {
-                                    clearErrorAuth();
-                                    navigate(DASHBOARD_PAGES.LOGIN);
-                                }}
-                            >
-                                Повторить снова
-                            </Button>
+                            <div>
+                                <Button
+                                    data-test-id='check-retry-button'
+                                    className='error-button error-button__check-email'
+                                    type='primary'
+                                    key='console'
+                                    onClick={() => {
+                                        clearErrorAuth();
+                                        navigate(DASHBOARD_PAGES.LOGIN);
+                                    }}
+                                >
+                                    Повторить снова
+                                </Button>
+                            </div>
                         }
                     />
                 </AuthWrap>

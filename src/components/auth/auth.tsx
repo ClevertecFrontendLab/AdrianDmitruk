@@ -4,6 +4,7 @@ import { EyeInvisibleOutlined, EyeTwoTone, GooglePlusOutlined } from '@ant-desig
 import { Button, Checkbox, Form, Input } from 'antd';
 
 import { useAuth } from '@hooks/use-auth';
+import { useWindowWidth } from '@hooks/use-window-width';
 import { Status } from '@redux/auth/types';
 import { store } from '@redux/configure-store';
 import { useNavigate } from 'react-router-dom';
@@ -27,6 +28,8 @@ export const Auth: FC<IAuthProps> = ({ type }) => {
     const [form] = Form.useForm<FormValues>();
 
     const navigate = useNavigate();
+
+    const isMobile = useWindowWidth(460);
 
     const {
         getLogin,
@@ -281,7 +284,10 @@ export const Auth: FC<IAuthProps> = ({ type }) => {
                     </Button>
                 )}
             </Form.Item>
-            <Button className='login-form-button google-btn' icon={<GooglePlusOutlined />}>
+            <Button
+                className='login-form-button google-btn'
+                icon={!isMobile && <GooglePlusOutlined />}
+            >
                 Войти через Google
             </Button>
         </Form>
